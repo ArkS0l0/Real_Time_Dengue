@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 ArkS0l0
+Copyright (c) 2025 Dengue Risk Prediction Project Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,46 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## How to Cite
+
+If you use this notebook in research or policy work, please cite as:
+
+Dengue Risk Prediction Notebook. (2025). GitHub repository.
+https://github.com/[YOUR_USERNAME]/dengue-risk-prediction
+
+Or with Zenodo DOI (once published):
+https://doi.org/10.5281/zenodo.[YOUR_ID]
+
+---
+
+## Contributing
+
+This project welcomes contributions from public health professionals, data scientists, and community members.
+
+Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+All contributions are appreciated and will be acknowledged.
+
+---
+
+## Data Attribution
+
+- Weather data: OpenWeatherMap API (https://openweathermap.org)
+- Dengue cases: Singapore NEA / MOH (https://www.nea.gov.sg/dengue-zika)
+- Scoring methodology: Dengue risk assessment best practices (WHO, CDC)
+
+---
+
+## Disclaimer
+
+This tool is provided for educational and public health planning purposes.
+It is not a substitute for official health authority guidance or clinical diagnosis.
+Always consult with local health authorities for official dengue surveillance data and recommendations.
