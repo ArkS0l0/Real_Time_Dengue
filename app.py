@@ -631,6 +631,42 @@ with tab_map:
         st.info("Demo hotspot data in use. Add dengue_hotspots.csv to use real data.")
 
     st.map(hotspot_df[["lat", "lon"]])
+with tab_map:
+    st.header("🗺️ Dengue Hotspot Map")
+
+with tab_map:
+    st.header("🗺️ Dengue Hotspot Map")
+
+    st.write("This map shows hotspot locations based on reported clusters or uploaded data.")
+
+    # Existing map logic
+    if os.path.exists("dengue_hotspots.csv"):
+        hotspot_df = pd.read_csv("dengue_hotspots.csv")
+        st.success("Loaded hotspot data from dengue_hotspots.csv")
+    else:
+        hotspot_df = pd.DataFrame({
+            "lat": [1.4303, 1.4404, 1.4211],
+            "lon": [103.8355, 103.8001, 103.9102],
+            "cases": [22, 41, 17]
+        })
+        st.info("Demo hotspot data in use. Add dengue_hotspots.csv to use real data.")
+
+    st.map(hotspot_df[["lat", "lon"]])
+
+    st.markdown("---")
+
+    # 🔹 Botpress Chat Section
+    st.subheader("💬 Dengue Hotspot Assistant")
+    st.caption("Ask about clusters, risk levels, or what actions to take in hotspot areas.")
+
+    bot_url = "https://cdn.botpress.cloud/webchat/v3.5/shareable.html?configUrl=https://files.bpcontent.cloud/2026/01/13/05/20260113053805-C6LOWMH2.json"
+
+    components.iframe(
+        bot_url,
+        height=600,
+        scrolling=True
+    )
+
 
 # Footer
 st.markdown("---")
@@ -756,3 +792,4 @@ with tab_symptom:
     components.iframe(bot_url, height=650, scrolling=True)
 
     st.warning("⚠️ **Medical Disclaimer:** This AI assistant is for triage guidance only.")
+
