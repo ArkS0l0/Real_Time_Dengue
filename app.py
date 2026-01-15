@@ -618,27 +618,6 @@ with tab_map:
 
     st.write("This map shows hotspot locations based on reported clusters or uploaded data.")
 
-    # If a CSV exists, use it; else demo data
-    if os.path.exists("dengue_hotspots.csv"):
-        hotspot_df = pd.read_csv("dengue_hotspots.csv")
-        st.success("Loaded hotspot data from dengue_hotspots.csv")
-    else:
-        hotspot_df = pd.DataFrame({
-            "lat": [1.4303, 1.4404, 1.4211],
-            "lon": [103.8355, 103.8001, 103.9102],
-            "cases": [22, 41, 17]
-        })
-        st.info("Demo hotspot data in use. Add dengue_hotspots.csv to use real data.")
-
-    st.map(hotspot_df[["lat", "lon"]])
-with tab_map:
-    st.header("🗺️ Dengue Hotspot Map")
-
-with tab_map:
-    st.header("🗺️ Dengue Hotspot Map")
-
-    st.write("This map shows hotspot locations based on reported clusters or uploaded data.")
-
     # Existing map logic
     if os.path.exists("dengue_hotspots.csv"):
         hotspot_df = pd.read_csv("dengue_hotspots.csv")
@@ -792,4 +771,5 @@ with tab_symptom:
     components.iframe(bot_url, height=650, scrolling=True)
 
     st.warning("⚠️ **Medical Disclaimer:** This AI assistant is for triage guidance only.")
+
 
