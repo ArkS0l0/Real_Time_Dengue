@@ -7,6 +7,7 @@ import requests
 import os
 import textwrap
 import html
+import streamlit.components.v1 as components 
 
 # Page config
 st.set_page_config(
@@ -23,8 +24,8 @@ st.markdown("**Real-time dengue danger assessment with AI-powered mitigation rec
 # -------------------------------
 # HEAD TABS NAVIGATION
 # -------------------------------
-tab_dashboard, tab_scanner, tab_newsletter, tab_map, tab_FAQprevent = st.tabs(
-    ["📊 Dashboard", "📷 Environment Scanner", "📰 Newsletter", "🗺️ Hotspot Map", "❓ Prevention Tips"]
+tab_dashboard, tab_scanner, tab_newsletter, tab_map, tab_FAQprevent, tab_symptom = st.tabs(
+    ["📊 Dashboard", "📷 Environment Scanner", "📰 Newsletter", "🗺️ Hotspot Map", "❓ Prevention Tips", "🩺 Symptom Triage"]
 )
 
 # -------------------------------
@@ -594,7 +595,7 @@ with tab_newsletter:
         st.write("Fetch latest Singapore dengue news from multiple sources.")
         display_singapore_dengue_news()
     
-    st.markdown("---")
+    st.markdown("---") 
     
     with col_manual:
         st.subheader("✍️ Manual Newsletter Creator")
@@ -739,3 +740,19 @@ with tab_FAQprevent:
         
         # 3. Rerun immediately to update the chat window with user's message
         st.rerun()
+
+# -------------------------------
+# TAB 6 — SYMPTOM TRIAGE ASSISTANT
+# -------------------------------
+
+with tab_symptom:
+    st.header("🩺 Symptom Triage Assistant")
+    st.markdown("Use this AI assistant to check your symptoms and receive guidance.")
+    
+    # Use your verified Botpress shareable link
+    bot_url = "https://cdn.botpress.cloud/webchat/v3.5/shareable.html?configUrl=https://files.bpcontent.cloud/2026/01/13/05/20260113053805-C6LOWMH2.json"
+    
+    # This renders the full Botpress window (logo and all) inside your tab
+    components.iframe(bot_url, height=650, scrolling=True)
+
+    st.warning("⚠️ **Medical Disclaimer:** This AI assistant is for triage guidance only.")
