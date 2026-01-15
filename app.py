@@ -638,7 +638,7 @@ with tab_map:
     st.subheader("💬 Dengue Hotspot Assistant")
     st.caption("Ask about clusters, risk levels, or what actions to take in hotspot areas.")
 
-    bot_url = "https://cdn.botpress.cloud/webchat/v3.5/shareable.html?configUrl=https://files.bpcontent.cloud/2026/01/13/05/20260113053805-C6LOWMH2.json"
+    bot_url = "https://cdn.botpress.cloud/webchat/v3.5/shareable.html?configUrl=https://files.bpcontent.cloud/2026/01/15/11/20260115113719-WNAZ8CYZ.json"
 
     components.iframe(
         bot_url,
@@ -771,5 +771,6 @@ with tab_symptom:
     components.iframe(bot_url, height=650, scrolling=True)
 
     st.warning("⚠️ **Medical Disclaimer:** This AI assistant is for triage guidance only.")
+
 
 
