@@ -24,7 +24,14 @@ RISK_WEIGHTS = {
 
 # ============== INITIALIZE ==============
 bot = telebot.TeleBot(BOT_TOKEN)
-model = YOLO(MODEL_PATH)
+
+# Load model with fallback to pretrained model if best.pt not found
+try:
+    model = YOLO(MODEL_PATH)
+except FileNotFoundError:
+    print(f"Warning: Model file '{MODEL_PATH}' not found.")
+    print("Downloading pretrained YOLOv8 nano model instead...")
+    model = YOLO('yolov8n.pt')
 
 # Create CSV if not exists
 if not os.path.exists(CSV_FILE):
