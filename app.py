@@ -9,6 +9,15 @@ import textwrap
 import html
 import streamlit.components.v1 as components 
 
+# ============== CONFIGURATION ==============
+import telebot
+from ultralytics import YOLO
+from PIL import Image
+import os
+import csv
+from datetime import datetime
+import io
+
 # Page config
 st.set_page_config(
     page_title="Dengue Risk Predictor",
@@ -771,6 +780,7 @@ with tab_symptom:
     components.iframe(bot_url, height=650, scrolling=True)
 
     st.warning("⚠️ **Medical Disclaimer:** This AI assistant is for triage guidance only.")
+
 
 
 
